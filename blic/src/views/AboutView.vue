@@ -1,12 +1,15 @@
 <template>
   <div class="item">
     <h1>Detalji knjige</h1>
+
+    <!--    
     <li>Authori: {{ item.item.author.authors }}</li>
     <li>ISBN: {{ item.item.ISBN.isbn }}</li>
     <li>Broj stranica: {{ item.item.broj_stranic.authors }}</li>
     <li>Izdavač: {{ item.item.izdavac.publisher }}</li>
     <li>Zemlja podrijetla: {{ item.item.drzava.country }}</li>
     <li>Broj likova: {{ item.item.likovi.characters }}</li>
+-->
 
     <button>
       <router-link to="/">Natrag</router-link>
@@ -29,7 +32,7 @@ export default {
 
   methods: {
     async getData() {
-      let podatci = await fetch("https://www.anapioficeandfire.com/api/books");
+      let podatci = await fetch("http://ntankovic.unipu.hr:8000/books.json");
       let rezultati = await podatci.json();
 
       let temp = {

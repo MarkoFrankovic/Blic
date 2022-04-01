@@ -1,8 +1,8 @@
 <template>
   <div class="home">
     <li v-for="item in items" :key="item.authors">
-      <router-link :to="{ name: 'about', params: { item } }">{{
-        item.authors
+      <router-link :to="{ name: 'about', params: { items } }">{{
+        item.url
       }}</router-link>
     </li>
   </div>
@@ -19,13 +19,14 @@ export default {
   },
 
   methods: {
-    async getData() {
-      let podatci = await fetch("https://www.anapioficeandfire.com/api/books");
+    async getData2() {
+      let podatci = await fetch("http://ntankovic.unipu.hr:8000/books.json");
       let rezultati = await podatci.json();
 
       console.log(rezultati);
 
       let temp = {
+        url: rezultati.url,
         ime: rezultati.name,
         ISBN: rezultati.isbn,
         author: rezultati.authors,
