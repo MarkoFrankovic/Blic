@@ -1,12 +1,9 @@
 <template>
   <div class="home">
     <li v-for="item in items" :key="item.url">
-      <!--
       <router-link :to="{ name: 'about', params: { items } }">{{
         item.url
       }}</router-link>
--->
-      {{ items }}
     </li>
   </div>
 </template>
@@ -24,24 +21,8 @@ export default {
   async mounted() {
     let podatci = await fetch("http://ntankovic.unipu.hr:8000/api/books");
     let rezultati = await podatci.json();
-
+    this.items = rezultati;
     console.log(rezultati);
-
-    let temp = {
-      url: rezultati.url,
-      ime: rezultati.name,
-      ISBN: rezultati.isbn,
-      author: rezultati.authors,
-      broj_stranica: rezultati.numberOfPages,
-      izdavac: rezultati.publisher,
-      drzava: rezultati.country,
-      mediatype: rezultati.mediatype,
-      datum_izdanja: rezultati.released,
-      likovi: rezultati.characters,
-      povlikovi: rezultati.povCharacters,
-    };
-
-    this.items.push(temp);
   },
 };
 </script>
