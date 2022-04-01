@@ -31,9 +31,10 @@ export default {
   },
 
   methods: {
-    async getData() {
-      let podatci = await fetch("http://ntankovic.unipu.hr:8000/books.json");
+    async getData2() {
+      let podatci = await fetch("https://www.anapioficeandfire.com/api/books");
       let rezultati = await podatci.json();
+      console.log(rezultati);
 
       let temp = {
         ime: rezultati.name,
@@ -49,7 +50,6 @@ export default {
       };
 
       this.item.push(temp);
-      console.log(rezultati);
     },
   },
 };
