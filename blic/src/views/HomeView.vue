@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <li v-for="item in items" :key="item.authors">
+    <li v-for="item in items" :key="item.url">
       <router-link :to="{ name: 'about', params: { items } }">{{
         item.url
       }}</router-link>
