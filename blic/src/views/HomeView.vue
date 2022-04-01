@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <li v-for="item in items" :key="item.url">
-      <router-link :to="{ name: 'about', params: { items } }">{{
+      <router-link :to="{ name: 'about', params: { item } }">{{
         item.url
       }}</router-link>
     </li>
