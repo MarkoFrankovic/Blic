@@ -30,27 +30,29 @@ export default {
     };
   },
 
-  methods: {
-    async getData2() {
-      let podatci = await fetch("https://www.anapioficeandfire.com/api/books");
-      let rezultati = await podatci.json();
-      console.log(rezultati);
+  async mounted() {
+    let podatci = await fetch("http://ntankovic.unipu.hr:8000/api/books");
+    let rezultati = await podatci.json();
 
-      let temp = {
-        ime: rezultati.name,
-        ISBN: rezultati.isbn,
-        author: rezultati.authors,
-        broj_stranica: rezultati.numberOfPages,
-        izdavac: rezultati.publisher,
-        drzava: rezultati.country,
-        mediatype: rezultati.mediatype,
-        datum_izdanja: rezultati.released,
-        likovi: rezultati.characters,
-        povlikovi: rezultati.povCharacters,
-      };
+    console.log(rezultati);
 
-      this.item.push(temp);
-    },
+    /*
+    let temp = {
+      url: rezultati.url,
+      ime: rezultati.name,
+      ISBN: rezultati.isbn,
+      author: rezultati.authors,
+      broj_stranica: rezultati.numberOfPages,
+      izdavac: rezultati.publisher,
+      drzava: rezultati.country,
+      mediatype: rezultati.mediatype,
+      datum_izdanja: rezultati.released,
+      likovi: rezultati.characters,
+      povlikovi: rezultati.povCharacters,
+    };
+
+    this.items.push(temp);
+     */
   },
 };
 </script>
