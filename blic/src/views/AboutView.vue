@@ -1,12 +1,13 @@
 <template>
   <div class="item">
     <h1>Detalji knjige</h1>
-    <li>Autori: {{ item.item.author.name }}</li>
-    <li>ISBN:</li>
-    <li>Broj stranica:</li>
-    <li>Izdavač:</li>
-    <li>Zemlja podrijetla:</li>
-    <li>Broj likova:</li>
+    <li>Authori: {{ item.item.author.authors }}</li>
+    <li>ISBN: {{ item.item.ISBN.isbn }}</li>
+    <li>Broj stranica: {{ item.item.broj_stranic.authors }}</li>
+    <li>Izdavač: {{ item.item.izdavac.publisher }}</li>
+    <li>Zemlja podrijetla: {{ item.item.drzava.country }}</li>
+    <li>Broj likova: {{ item.item.likovi.characters }}</li>
+
     <button>
       <router-link to="/">Natrag</router-link>
     </button>
@@ -34,8 +35,8 @@ export default {
       let temp = {
         ime: rezultati.name,
         ISBN: rezultati.isbn,
-        authori: rezultati.authors,
-        broj_stranica: rezultati.broj_stranica,
+        author: rezultati.authors,
+        broj_stranica: rezultati.numberOfPages,
         izdavac: rezultati.publisher,
         drzava: rezultati.country,
         mediatype: rezultati.mediatype,

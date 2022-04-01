@@ -28,8 +28,8 @@ export default {
       let temp = {
         ime: rezultati.name,
         ISBN: rezultati.isbn,
-        authori: rezultati.authors,
-        broj_stranica: rezultati.broj_stranica,
+        author: rezultati.authors,
+        broj_stranica: rezultati.numberOfPages,
         izdavac: rezultati.publisher,
         drzava: rezultati.country,
         mediatype: rezultati.mediatype,
